@@ -33,10 +33,10 @@ public class UserService {
 	// Create User Method
 	public User createUser(User user) throws UserExistException {
 		//if user excist using username
-		User exsistingUser = userRepository.findByUsername(user.getUsername());
+		User existingUser = userRepository.findByUsername(user.getUsername());
 		
 		//if not then throw UserExcistException
-		if(exsistingUser != null) {
+		if(existingUser != null) {
 			throw new UserExistException("User excist");
 		}
 		
